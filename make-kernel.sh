@@ -2,7 +2,7 @@
 set -euo pipefail
 
 usage() {
-  echo "usage: $0 --name NAME [--display-name DISPNAME]" >&2
+  echo "usage: $0 --node NODE --name NAME [--display-name DISPNAME]" >&2
   exit 1
 }
 
