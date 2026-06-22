@@ -10,7 +10,7 @@ On a slurm-managed HPC cluster, it is cumbersome to have to manually request a j
 ## Creating a new Kernel
 
 1. SSH to the node you'll be working on (this implies that you'll need to do this for each node you intend to use)
-2. Activate the python environment you want to define your kernel (this implies that you'll need to do this for each environment you intend to use)
+2. Activate the python environment you want to run your kernel (this implies that you'll need to do this for each environment you intend to use)
 3. Downloaded and run:
     ```bash
     wget -qO- https://raw.githubusercontent.com/StevenSong/jupyter-kernel-srun-patcher/main/make-kernel.sh | bash -s -- --name <NAME> [--display-name <DISPNAME>]
