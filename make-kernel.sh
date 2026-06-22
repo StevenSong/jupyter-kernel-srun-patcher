@@ -34,8 +34,8 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-[[ -n "$NAME" ]] || { echo "error: --name is required" >&2; usage; }
 [[ -n "$NODE" ]] || { echo "error: --node is required" >&2; usage; }
+[[ -n "$NAME" ]] || { echo "error: --name is required" >&2; usage; }
 DISPNAME=${DISPNAME:-$NAME}
 
 KERNEL_STR=$(python -m ipykernel install --user --name $NAME --display-name $DISPNAME)
