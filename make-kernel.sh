@@ -42,3 +42,5 @@ prefix='["srun","-w","kg35-nvl02","--gres=gpu:1","--cpus-per-task=8","--mem=32G"
 
 jq --argjson prefix "$prefix" '.argv = $prefix + .argv' \
   "$CONFIG_FILE" > "$CONFIG_FILE.tmp" && mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
+
+echo $KERNEL_STR
