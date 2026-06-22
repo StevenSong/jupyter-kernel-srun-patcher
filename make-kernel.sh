@@ -47,7 +47,7 @@ CONFIG_FILE="$KERNEL_DIR/kernel.json"
 prefix=$(jq -nc --arg node "$NODE" \
   '["srun","-w",$node,"--gres=gpu:1","--cpus-per-task=8","--mem=32G","--job-name=jupyter-kernel"]')
 
-jq --argjson prefix "$prefix" '.argv = $prefix + .argv' \
+jq --argjson prefix "$prefix" '.argv = $prefix + .argv | .language = "srun-python"' \
   "$CONFIG_FILE" > "$CONFIG_FILE.tmp" && mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
 
 echo $KERNEL_STR
