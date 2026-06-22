@@ -13,3 +13,9 @@ This script can be downloaded and run with this one-liner:
 ```bash
 wget -qO- https://raw.githubusercontent.com/StevenSong/jupyter-kernel-srun-patcher/main/make-kernel.sh | bash -s -- --node <NODE> --name <NAME> [--display-name <DISPNAME>]
 ```
+
+**VSCode Tips**
+* in a notebook in VSCode, open the kernel selector > "Select Another Kernel" > "Jupyter Kernel"
+  * see [VSCode docs](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management)
+* in VSCode, you may need to reload the session for it to pick up the kernel (use "Developer: Reload Window" from the command palette)
+* be judicious about managing your jobs, sometimes VSCode does not kill off kernels correctly
