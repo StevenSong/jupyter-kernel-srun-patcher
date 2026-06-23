@@ -39,7 +39,7 @@ KERNEL_DIR=$(echo "$KERNEL_STR" | awk '{print $NF}')
 CONFIG_FILE="$KERNEL_DIR/kernel.json"
 
 prefix=$(jq -nc --arg node "$HOSTNAME" \
-  '["srun","-w",$node,"--gres=gpu:1","--cpus-per-task=8","--mem=32G","--job-name=jupyter-kernel"]')
+  '["srun","-w",$node,"--gres=gpu:1","--cpus-per-task=8","--mem=32G","--job-name=jupyter-kernel","--time=12:00:00"]')
 
 jq --argjson prefix "$prefix" '.argv = $prefix + .argv | .language = "srun-python"' \
   "$CONFIG_FILE" > "$CONFIG_FILE.tmp" && mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
